@@ -1,0 +1,23 @@
+service: fullstack-graphql
+
+provider:
+  name: aws
+  region: ap-southeast-2
+  runtime: nodejs10.x
+
+functions:
+  graphql:
+    # this is formatted as <FILENAME>.<HANDLER>
+    handler: src/server.graphqlHandler
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
+  playground:
+    handler: src/server.playgroundHandler
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
