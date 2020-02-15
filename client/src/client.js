@@ -29,7 +29,8 @@ const delay = setContext(
 
 const cache = new InMemoryCache()
 const http = new HttpLink({
-  uri: 'http://localhost:4000/'
+  // uri: 'http://localhost:4000/'
+  uri: 'https://kbhu39fys1.execute-api.ap-southeast-2.amazonaws.com/dev/'
 })
 
 const link = ApolloLink.from([
